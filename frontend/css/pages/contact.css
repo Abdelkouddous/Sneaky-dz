@@ -1,0 +1,112 @@
+/* Pages: Contact */
+
+.contact-page {
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+}
+
+.contact__info {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+}
+
+.contact__title {
+  margin-bottom: var(--space-2);
+}
+
+.contact__desc {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.contact__detail-item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.contact__icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact__icon-wrap svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact__detail-title {
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.contact__detail-text {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
+
+.contact__social-title {
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.contact__socials {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.contact__form-wrap {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  border: 1px solid var(--color-border);
+}
+
+.contact__map {
+  margin-top: var(--space-16);
+  height: 400px;
+  background: var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.contact__map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(100%) contrast(1.2);
+}
+
+[data-theme="dark"] .contact__map-iframe {
+  filter: invert(90%) hue-rotate(180deg) grayscale(80%) contrast(1.2);
+}
+
+@media (max-width: 768px) {
+  .contact__layout {
+    grid-template-columns: 1fr;
+  }
+}

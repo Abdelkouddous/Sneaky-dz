@@ -1,0 +1,107 @@
+/* Component: Toast */
+
+.toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: var(--color-surface-elevated);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-4);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 300px;
+  max-width: 420px;
+  transform: translateX(120%);
+  transition: transform var(--transition-slow), opacity var(--transition-slow);
+  border: 1px solid var(--color-border-light);
+  border-left: 4px solid;
+}
+
+.toast--visible {
+  transform: translateX(0);
+}
+
+.toast--removing {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+/* Toast Variants */
+.toast--success {
+  border-left-color: var(--color-success);
+}
+.toast--success .toast__icon { color: var(--color-success); }
+
+.toast--error {
+  border-left-color: var(--color-error);
+}
+.toast--error .toast__icon { color: var(--color-error); }
+
+.toast--info {
+  border-left-color: var(--color-accent);
+}
+.toast--info .toast__icon { color: var(--color-accent); }
+
+.toast__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.toast__content {
+  flex: 1;
+}
+
+.toast__message {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.toast__close {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.toast__close:hover {
+  background: var(--color-border-light);
+  color: var(--color-text);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .toast-container {
+    bottom: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+  }
+  
+  .toast {
+    min-width: 0;
+    width: 100%;
+    transform: translateY(120%);
+  }
+  
+  .toast--visible {
+    transform: translateY(0);
+  }
+}

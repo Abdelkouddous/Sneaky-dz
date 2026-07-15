@@ -1,0 +1,93 @@
+/* Utilities */
+
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.u-hidden {
+  display: none !important;
+}
+
+.u-invisible {
+  visibility: hidden !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-color-accent {
+  color: var(--color-accent) !important;
+}
+
+.u-color-success {
+  color: var(--color-success) !important;
+}
+
+.u-color-error {
+  color: var(--color-error) !important;
+}
+
+.u-color-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+.u-font-bold {
+  font-weight: 700 !important;
+}
+
+.u-font-medium {
+  font-weight: 500 !important;
+}
+
+.u-mt-auto {
+  margin-top: auto !important;
+}
+
+.u-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.u-mt-0 {
+  margin-top: 0 !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.a-fade-in {
+  animation: fadeIn var(--transition-default) forwards;
+}
+
+.a-slide-up {
+  animation: slideUp var(--transition-default) forwards;
+}

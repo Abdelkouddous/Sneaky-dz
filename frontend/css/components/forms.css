@@ -1,0 +1,138 @@
+/* Component: Forms */
+
+.form-group {
+  margin-bottom: var(--space-5);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-elevated);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(163, 230, 53, 0.15);
+}
+
+.form-input--error {
+  border-color: var(--color-error);
+}
+
+.form-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-error {
+  font-size: 0.8125rem;
+  color: var(--color-error);
+  margin-top: var(--space-1);
+  display: none; /* hidden by default */
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.form-input--error ~ .form-error {
+  display: flex;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) top 50%;
+  background-size: 0.65rem auto;
+  padding-right: var(--space-10);
+}
+
+[data-theme="dark"] select.form-input {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+/* Radio & Checkbox */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+}
+
+.form-check__input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 4px; /* for checkbox */
+  display: grid;
+  place-content: center;
+  transition: all var(--transition-fast);
+}
+
+.form-check__input[type="radio"] {
+  border-radius: 50%;
+}
+
+.form-check__input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+}
+
+.form-check__input[type="radio"]::before {
+  border-radius: 50%;
+}
+
+.form-check__input:checked {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.form-check__input:checked::before {
+  transform: scale(1);
+}
+
+/* Input Group (like Newsletter) */
+.form-input-group {
+  display: flex;
+  width: 100%;
+}
+
+.form-input-group .form-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-input-group .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

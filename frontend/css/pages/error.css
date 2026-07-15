@@ -1,0 +1,49 @@
+/* Pages: Error (404 / 500) */
+
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-12) var(--space-4);
+}
+
+.error__inner {
+  max-width: 500px;
+}
+
+.error__code {
+  font-family: var(--font-heading);
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-2);
+}
+
+.error__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--space-4);
+}
+
+.error__desc {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: var(--space-8);
+}
+
+.error__actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+@media (max-width: 480px) {
+  .error__actions {
+    flex-direction: column;
+  }
+}
